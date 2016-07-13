@@ -1,0 +1,10 @@
+# example Makefile for OSX
+
+all: dyn
+
+dyn:
+	clang++ demo.cpp -std=c++14 -stdlib=libc++ -Wall -Llibs/macOS -lbase -Isrc -o demo
+	install_name_tool -change @rpath/libbase.dylib @executable_path/libs/macOS/libbase.dylib demo
+
+static:
+	clang++ libs/macOS/libbase.a demo.cpp -std=c++14 -stdlib=libc++ -Isrc -framework CoreFoundation -framework ApplicationServices  -framework AppKit -framework IOKit -framework Security -Wall  -o demo
