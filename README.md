@@ -33,7 +33,11 @@ Refer to examples under /demo for more information.
 # Build
  * Download and addd [depot_tools](https://www.chromium.org/developers/how-tos/install-depot-tools) to your PATH
  * Configure with gn.
-
+ ```
+ :: on Windows, you need first
+ > set DEPOT_TOOLS_WIN_TOOLCHAIN=0
+ ```
+ then
  ```
  $ cd src
  $ gn args out/mybuild
