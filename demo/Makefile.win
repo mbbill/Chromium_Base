@@ -6,7 +6,7 @@
 all: dyn
 
 dyn:
-	cl /MD /I..\src /MACHINE:X64 /DYNAMICBASE "base.dll.lib" demo.cpp
+	cl /MD /EHsc /I..\src /DYNAMICBASE /DNOMINMAX "base.dll.lib" demo.cpp
 
 static:
-	cl /Zi /MT /I..\src /MACHINE:X64 /DYNAMICBASE "kernel32.lib" "user32.lib" "gdi32.lib" "winspool.lib" "comdlg32.lib" "advapi32.lib" "shell32.lib" "ole32.lib" "oleaut32.lib" "uuid.lib" "odbc32.lib" "odbccp32.lib" "winmm.lib" "Dbghelp.lib" "Psapi.lib" "Mincore.lib" "base.lib" "base_static.lib" demo.cpp modp_b64.obj
+	cl /Zi /EHsc /MT /I..\src /DYNAMICBASE /DNOMINMAX "kernel32.lib" "user32.lib" "gdi32.lib" "winspool.lib" "comdlg32.lib" "advapi32.lib" "shell32.lib" "ole32.lib" "oleaut32.lib" "uuid.lib" "odbc32.lib" "odbccp32.lib" "winmm.lib" "Dbghelp.lib" "Psapi.lib" "Mincore.lib" "base.lib" "base_static.lib" demo.cpp modp_b64.obj
