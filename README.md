@@ -24,8 +24,18 @@ Compiling it into a stand alone library so that it can be used by other projects
  * a lot more..
 
 # Build
- * Download and extract Chromium's  depot_tools
- * Build with gn
+ * Download and addd [depot_tools](https://www.chromium.org/developers/how-tos/install-depot-tools) to your PATH
+ * Configure with gn.
+
+ ```
+ $ cd src
+ $ gn args out/mybuild
+ ```
+ * Build with ninja
+
+ ```
+ $ ninja -C out/mybuild
+ ```
 
 # Platform Support
  * macOS
