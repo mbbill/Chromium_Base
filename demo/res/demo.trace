@@ -1,0 +1,10 @@
+{"traceEvents": [
+{"pid":81207,"tid":1295,"ts":106328940694,"ph":"X","cat":"test_categories","name":"DemoLog","args":{},"dur":690,"tdur":316,"tts":7537},
+{"pid":81207,"tid":1295,"ts":106328941385,"ph":"X","cat":"test_categories","name":"DemoBase64","args":{},"dur":20,"tdur":18,"tts":7858},
+{"pid":81207,"tid":1295,"ts":106328941405,"ph":"X","cat":"test_categories","name":"NestedTraceLog3","args":{},"dur":516035,"tdur":348,"tts":7879},
+{"pid":81207,"tid":1295,"ts":106329042857,"ph":"X","cat":"test_categories","name":"NestedTraceLog2","args":{},"dur":309465,"tdur":200,"tts":7928},
+{"pid":81207,"tid":1295,"ts":106329146443,"ph":"X","cat":"test_categories","name":"NestedTraceLog1","args":{},"dur":102007,"tdur":37,"tts":8034},
+{"pid":81207,"tid":0,"ts":0,"ph":"M","cat":"__metadata","name":"num_cpus","args":{"number":8}}
+]}
+
+

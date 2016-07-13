@@ -72,11 +72,31 @@ void DemoTraceEventEnd() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+void NestedTraceLog1() {
+    TRACE_EVENT0(EVENT_CATEGORIES, "NestedTraceLog1");
+    PlatformThread::Sleep(TimeDelta::FromMilliseconds(100));
+}
+
+void NestedTraceLog2() {
+    TRACE_EVENT0(EVENT_CATEGORIES, "NestedTraceLog2");
+    PlatformThread::Sleep(TimeDelta::FromMilliseconds(100));
+    NestedTraceLog1();
+    PlatformThread::Sleep(TimeDelta::FromMilliseconds(100));
+}
+void NestedTraceLog3() {
+    TRACE_EVENT0(EVENT_CATEGORIES, "NestedTraceLog3");
+    PlatformThread::Sleep(TimeDelta::FromMilliseconds(100));
+    NestedTraceLog2();
+    PlatformThread::Sleep(TimeDelta::FromMilliseconds(100));
+}
+////////////////////////////////////////////////////////////////////////////////
 int main(void) {
     DemoTraceEventBegin();
 
     DemoLog();
     DemoBase64();
+
+    NestedTraceLog3();
 
     DemoTraceEventEnd();
     return 0;
