@@ -3,8 +3,8 @@
 all: dyn
 
 dyn:
-	clang++ demo.cpp -std=c++14 -stdlib=libc++ -Wall -Llibs/macOS -lbase -Isrc -o demo
-	install_name_tool -change @rpath/libbase.dylib @executable_path/libs/macOS/libbase.dylib demo
+	clang++ demo.cpp -std=c++14 -stdlib=libc++ -Wall -L. -lbase -I../src -o demo
+	install_name_tool -change @rpath/libbase.dylib @executable_path/libbase.dylib demo
 
 static:
-	clang++ libs/macOS/libbase.a demo.cpp -std=c++14 -stdlib=libc++ -Isrc -framework CoreFoundation -framework ApplicationServices  -framework AppKit -framework IOKit -framework Security -Wall  -o demo
+	clang++ libbase.a libbase_static.a demo.cpp -std=c++14 -stdlib=libc++ -I../src -framework CoreFoundation -framework ApplicationServices  -framework AppKit -framework IOKit -framework Security -Wall  -o demo
