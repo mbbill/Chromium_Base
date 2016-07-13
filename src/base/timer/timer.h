@@ -251,28 +251,28 @@ class RepeatingTimer : public BaseTimerMethodPointer {
 //
 // If destroyed, the timeout is canceled and will not occur even if already
 // inflight.
-class DelayTimer : protected Timer {
- public:
-  template <class Receiver>
-  DelayTimer(const tracked_objects::Location& posted_from,
-             TimeDelta delay,
-             Receiver* receiver,
-             void (Receiver::*method)())
-      : Timer(posted_from,
-              delay,
-              base::Bind(method, base::Unretained(receiver)),
-              false) {}
-
-  void Reset() override;
-};
-
-// This class has a templated method so it can not be exported without failing
-// to link in MSVC. But clang-plugin does not allow inline definitions of
-// virtual methods, so the inline definition lives in the header file here
-// to satisfy both.
-inline void DelayTimer::Reset() {
-  Timer::Reset();
-}
+//class DelayTimer : protected Timer {
+// public:
+//  template <class Receiver>
+//  DelayTimer(const tracked_objects::Location& posted_from,
+//             TimeDelta delay,
+//             Receiver* receiver,
+//             void (Receiver::*method)())
+//      : Timer(posted_from,
+//              delay,
+//              base::Bind(method, base::Unretained(receiver)),
+//              false) {}
+//
+//  void Reset() override;
+//};
+//
+//// This class has a templated method so it can not be exported without failing
+//// to link in MSVC. But clang-plugin does not allow inline definitions of
+//// virtual methods, so the inline definition lives in the header file here
+//// to satisfy both.
+//inline void DelayTimer::Reset() {
+//  Timer::Reset();
+//}
 
 }  // namespace base
 
