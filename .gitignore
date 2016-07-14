@@ -6,3 +6,4 @@ src/out/
 *.exe
 *.log
 *.obj
+out/
