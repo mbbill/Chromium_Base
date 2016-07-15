@@ -1,0 +1,9 @@
+# example Makefile for OSX
+
+all: dyn
+
+dyn:
+	g++ demo.cpp -std=c++14 -Wall -L. -lbase -I../src -o demo
+
+static:
+	clang++ libbase.a libbase_static.a demo.cpp -std=c++14 -stdlib=libc++ -I../src -framework CoreFoundation -framework ApplicationServices  -framework AppKit -framework IOKit -framework Security -Wall  -o demo
