@@ -251,6 +251,7 @@ class RepeatingTimer : public BaseTimerMethodPointer {
 //
 // If destroyed, the timeout is canceled and will not occur even if already
 // inflight.
+// billming, this is not used.
 //class DelayTimer : protected Timer {
 // public:
 //  template <class Receiver>
