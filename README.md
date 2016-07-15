@@ -32,6 +32,7 @@ Refer to examples under /demo for more information.
 
 # Build
  * Download and addd [depot_tools](https://www.chromium.org/developers/how-tos/install-depot-tools) to your PATH
+ * On Linux or macOS, run ```prep.sh```
  * Configure with gn.
  ```
  :: on Windows, you need first
