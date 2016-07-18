@@ -24,8 +24,12 @@ Compiling it into a stand alone library so that it can be used by other projects
  * a lot more..
 
 # Example
+## Trace event demo
 Generate tracing event and view flame graph with [catapult](https://github.com/catapult-project/catapult) or Chrome's ```about:tracing```
 ![Trace Event Demo](https://raw.githubusercontent.com/mbbill/Chromium_Base/master/demo/res/trace_demo.png "Trace event demo")
+
+## Trace event for some complex project
+![Trace Event Demo](https://raw.githubusercontent.com/mbbill/Chromium_Base/master/demo/res/trace_demo_webkit.png "Trace event demo")
 
 # Usage
 Refer to examples under /demo for more information.
