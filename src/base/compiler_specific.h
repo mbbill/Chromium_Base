@@ -195,4 +195,13 @@
 #define HAS_FEATURE(FEATURE) 0
 #endif
 
+// billming
+#if defined(COMPILER_GCC) || defined(__clang__)
+#define PRETTY_FUNCTION __PRETTY_FUNCTION__
+#elif defined(COMPILER_MSVC)
+#define PRETTY_FUNCTION __FUNCTION__
+#else
+#error Fix tihs!
+#endif
+
 #endif  // BASE_COMPILER_SPECIFIC_H_
