@@ -943,6 +943,8 @@ component("base") {
     "trace_event/tracing_agent.h",
     "trace_event/winheap_dump_provider_win.cc",
     "trace_event/winheap_dump_provider_win.h",
+    "trace_event/easy_trace.cc",
+    "trace_event/easy_trace.h",
     "tracked_objects.cc",
     "tracked_objects.h",
     "tracking_info.cc",
