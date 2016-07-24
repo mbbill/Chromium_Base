@@ -19,7 +19,7 @@ namespace trace_event {
 // leaking this object is fine.
 static const FilePath& path_ = *(new FilePath(FILE_PATH_LITERAL("trace.json")));
 static const char EVENT_CATEGORIES[] = \
-"JSC,webkit,minibrowser,rendering,dom,css,html,loader,platform,platform_graphics";
+"JSC,webkit,minibrowser,rendering,page,dom,css,html,loader,platform,platform_graphics";
 
 static void OnTraceDataCollected(
     Closure quit_closure,
