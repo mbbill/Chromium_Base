@@ -40,7 +40,7 @@ void traceStart() {
     string categories = EVENT_CATEGORIES;
 
     trace_event::TraceLog::GetInstance()->SetEnabled(
-        trace_event::TraceConfig(categories, trace_event::RECORD_UNTIL_FULL),
+        trace_event::TraceConfig(categories, trace_event::RECORD_CONTINUOUSLY),
         trace_event::TraceLog::RECORDING_MODE);
 }
 

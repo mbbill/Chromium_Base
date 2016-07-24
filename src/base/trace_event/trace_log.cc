@@ -74,7 +74,9 @@ const size_t kTraceEventVectorBigBufferChunks =
 static_assert(
     kTraceEventVectorBigBufferChunks <= TraceBufferChunk::kMaxChunkIndex,
     "Too many big buffer chunks");
-const size_t kTraceEventVectorBufferChunks = 256000 / kTraceBufferChunkSize;
+// billming, 10x bigger the ring buffer, chrome://tracing can handle that.
+const size_t kTraceEventVectorBufferChunks = 2560000 / kTraceBufferChunkSize;
+//const size_t kTraceEventVectorBufferChunks = 256000 / kTraceBufferChunkSize;
 static_assert(
     kTraceEventVectorBufferChunks <= TraceBufferChunk::kMaxChunkIndex,
     "Too many vector buffer chunks");
