@@ -1,5 +1,7 @@
 // billming
 
+#include <string>
+
 #include "base/trace_event/easy_trace.h"
 
 #include "base/files/file_util.h"
@@ -18,8 +20,6 @@ namespace trace_event {
 
 // leaking this object is fine.
 static const FilePath& path_ = *(new FilePath(FILE_PATH_LITERAL("trace.json")));
-static const char EVENT_CATEGORIES[] = \
-"JSC,webkit,minibrowser,rendering,page,dom,css,html,loader,platform,platform_graphics";
 
 static void OnTraceDataCollected(
     Closure quit_closure,
@@ -36,8 +36,7 @@ static void TraceOutputCallback(const std::string& data) {
     AppendToFile(path_, data.c_str(), data.length());
 }
 
-void traceStart() {
-    string categories = EVENT_CATEGORIES;
+void traceStart(const string& categories) {
 
     trace_event::TraceLog::GetInstance()->SetEnabled(
         trace_event::TraceConfig(categories, trace_event::RECORD_CONTINUOUSLY),
