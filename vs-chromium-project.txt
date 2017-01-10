@@ -1,0 +1,15 @@
+[SearchableFiles.include]
+*
+
+[SearchableFiles.ignore]
+*.pdb
+*.exe
+*.dll
+*.obj
+*.lib
+*.pak
+*unittest*
+/BuildToolsWin
+/LayoutTests
+/PerformanceTests
+ChangeLog*
