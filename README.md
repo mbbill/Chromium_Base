@@ -1,9 +1,8 @@
 # Chromium_Base
 
-It's the 'base' of Chromium, a lot of good stuff in there.
-Compiling it into a stand alone library so that it can be used by other projects more easily.
+It's the *base* component of Chromium where a lot of good tools sits in.
 
-## The 'good stuff's:
+## Tools included:
  * trace event
  * Threading
  * bind
